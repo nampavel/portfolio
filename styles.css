@@ -1,0 +1,22 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    border: solid 1px black;
+    padding: 5px;
+}
+
+#navigation-bar {
+    border: solid 1px black;
+    display: flex;
+    padding: 5px;
+    gap: 20px;
+    justify-content: end;
+}
+
+#personal-photo {
+    border: solid 1px black;
+    width: 50px;
+    height: 50px;
+}

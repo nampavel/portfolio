@@ -12,3 +12,25 @@ function toggleTheme() {
 }
 
 themeToggleBtn.addEventListener('click', toggleTheme);
+
+
+
+function add7 (x) {
+    return x + 7;
+}
+
+console.log(add7(2));
+console.log(add7(9));
+
+function multiply (a, b) {
+    return a * b;
+}
+
+console.log(multiply(2,3));
+
+function capitalize () {
+    return toString();
+}
+
+
+console.log(capitalize(Hello));

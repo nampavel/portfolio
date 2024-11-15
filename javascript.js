@@ -1,36 +1,35 @@
-const themeToggleBtn = document.getElementById('theme-toggle');
-const currentTheme = localStorage.getItem('theme') || 'light-theme';
-document.body.classList.add(currentTheme);
+//function to randomly return rock paper or scissors
+function getComputerChoice (min, max) {
+    let computerChoice;
+    //returns an integer number from x to y; 
+    min = Math.ceil(1);
+    max = Math.floor(3);
+    computerChoice = Math.floor(Math.random() * (max - min + 1)) + min;
 
-function toggleTheme() {
-    const newTheme = document.body.classList.contains('light-theme') ? 'dark-theme' : 'light-theme';
-
-    document.body.classList.remove('light-theme', 'dark-theme');
-    document.body.classList.add(newTheme);
-
-    localStorage.setItem('theme', newTheme)
+    //make the function returns string options of rock/paper/scissors instead of numbers
+    switch (computerChoice) {
+        case 1:
+            return "rock";
+            break;
+        case 2:
+            return "paper";
+            break;
+        default:
+            return "scissors";
+    }
 }
 
-themeToggleBtn.addEventListener('click', toggleTheme);
-
-
-
-function add7 (x) {
-    return x + 7;
+// ask a person for an answer, store it, return it
+function getHumanChoice () {
+    let humanChoice;
+    return humanChoice = prompt("type your choice", "");
 }
 
-console.log(add7(2));
-console.log(add7(9));
-
-function multiply (a, b) {
-    return a * b;
-}
-
-console.log(multiply(2,3));
-
-function capitalize () {
-    return toString();
-}
+console.log(getComputerChoice());
+console.log(getHumanChoice());
 
 
-console.log(capitalize(Hello));
+
+
+
+

@@ -51,12 +51,28 @@ function playRound (humanChoice, computerChoice) {
         } else {
             console.log("you won!")
         }
+    } else if (humanChoice === "paper") {
+        if (computerChoice === "paper") {
+            console.log("You got a draw");
+        } else if (computerChoice === "scissors") {
+            console.log("Computer won, scissors beats paper!")
+        } else {
+            console.log("you won!")
+        }
+    } else {
+        if (computerChoice === "scissors") {
+            console.log("You got a draw");
+        } else if (computerChoice === "rock") {
+            console.log("Computer won, rock beats scissors!")
+        } else {
+            console.log("you won!")
+        }
     }
 }
 
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
-console.log("computer choice is = " + computerChoice);
-console.log("you got = " + humanChoice);
+console.log("computer: " + computerChoice);
+console.log("you: " + humanChoice);
 playRound(humanSelection, computerSelection);

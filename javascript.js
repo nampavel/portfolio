@@ -24,11 +24,6 @@ function getComputerChoice (min, max) {
     return computerChoice;
 }
 
-
-function getHumanChoice2 () {
-    
-}
-
 //STEP 3: ask a person for an answer, store it, return it
 function getHumanChoice () {
     humanChoice = prompt("type your choice");
@@ -42,12 +37,7 @@ let computerScore = 0;
 //STEP 5: function to play a single round
 
 
-
-
-
-
-
-//function to play 5 rounds
+//STEP 6: function to play 5 rounds
 function playGame() {
     // const humanSelection = getHumanChoice();
     // const computerSelection = getComputerChoice();
@@ -93,10 +83,6 @@ function playGame() {
     playRound(getHumanChoice(), getComputerChoice());
     playRound(getHumanChoice(), getComputerChoice());
     playRound(getHumanChoice(), getComputerChoice());
-    // console.log("computer: " + computerChoice);
-    // console.log("you: " + humanChoice);
-    // playRound(humanSelection, computerSelection);
-    // console.log("human: " + humanScore + "   computer: " + computerScore);
 }
 
 

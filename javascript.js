@@ -40,16 +40,16 @@ let humanScore = 0;
 let computerScore = 0;
 
 //STEP 5: function to play a single round
-
-
 function playRound (humanChoice, computerChoice) {
     if (humanChoice === "rock") {
         if (computerChoice === "rock") {
             console.log("You got a draw");
         } else if (computerChoice === "paper") {
             console.log("Computer won, paper beats rock!")
+            computerScore = computerScore + 1;
         } else {
             console.log("you won!")
+            humanScore = humanScore + 1;
         }
     } else if (humanChoice === "paper") {
         if (computerChoice === "paper") {
@@ -58,14 +58,17 @@ function playRound (humanChoice, computerChoice) {
             console.log("Computer won, scissors beats paper!")
         } else {
             console.log("you won!")
+            humanScore = humanScore + 1;
         }
     } else {
         if (computerChoice === "scissors") {
             console.log("You got a draw");
         } else if (computerChoice === "rock") {
             console.log("Computer won, rock beats scissors!")
+            computerScore = computerScore + 1;
         } else {
             console.log("you won!")
+            humanScore = humanScore + 1;
         }
     }
 }
@@ -76,3 +79,4 @@ const computerSelection = getComputerChoice();
 console.log("computer: " + computerChoice);
 console.log("you: " + humanChoice);
 playRound(humanSelection, computerSelection);
+console.log("human: " + humanScore + "   computer: " + computerScore);

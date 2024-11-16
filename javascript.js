@@ -40,43 +40,64 @@ let humanScore = 0;
 let computerScore = 0;
 
 //STEP 5: function to play a single round
-function playRound (humanChoice, computerChoice) {
-    if (humanChoice === "rock") {
-        if (computerChoice === "rock") {
-            console.log("You got a draw");
-        } else if (computerChoice === "paper") {
-            console.log("Computer won, paper beats rock!")
-            computerScore = computerScore + 1;
+
+
+
+
+
+
+
+//function to play 5 rounds
+function playGame() {
+    // const humanSelection = getHumanChoice();
+    // const computerSelection = getComputerChoice();
+
+    function playRound (humanChoice, computerChoice) {
+        console.log("computer: " + computerChoice);
+        console.log("you: " + humanChoice);
+        if (humanChoice === "rock") {
+            if (computerChoice === "rock") {
+                console.log("You got a draw");
+            } else if (computerChoice === "paper") {
+                console.log("Computer won, paper beats rock!")
+                computerScore = computerScore + 1;
+            } else {
+                console.log("you won!")
+                humanScore = humanScore + 1;
+            }
+        } else if (humanChoice === "paper") {
+            if (computerChoice === "paper") {
+                console.log("You got a draw");
+            } else if (computerChoice === "scissors") {
+                console.log("Computer won, scissors beats paper!")
+            } else {
+                console.log("you won!")
+                humanScore = humanScore + 1;
+            }
         } else {
-            console.log("you won!")
-            humanScore = humanScore + 1;
+            if (computerChoice === "scissors") {
+                console.log("You got a draw");
+            } else if (computerChoice === "rock") {
+                console.log("Computer won, rock beats scissors!")
+                computerScore = computerScore + 1;
+            } else {
+                console.log("you won!")
+                humanScore = humanScore + 1;
+            }
         }
-    } else if (humanChoice === "paper") {
-        if (computerChoice === "paper") {
-            console.log("You got a draw");
-        } else if (computerChoice === "scissors") {
-            console.log("Computer won, scissors beats paper!")
-        } else {
-            console.log("you won!")
-            humanScore = humanScore + 1;
-        }
-    } else {
-        if (computerChoice === "scissors") {
-            console.log("You got a draw");
-        } else if (computerChoice === "rock") {
-            console.log("Computer won, rock beats scissors!")
-            computerScore = computerScore + 1;
-        } else {
-            console.log("you won!")
-            humanScore = humanScore + 1;
-        }
+        console.log("human: " + humanScore + "   computer: " + computerScore);
     }
+
+    playRound(getHumanChoice(), getComputerChoice());
+    playRound(getHumanChoice(), getComputerChoice());
+    playRound(getHumanChoice(), getComputerChoice());
+    playRound(getHumanChoice(), getComputerChoice());
+    playRound(getHumanChoice(), getComputerChoice());
+    // console.log("computer: " + computerChoice);
+    // console.log("you: " + humanChoice);
+    // playRound(humanSelection, computerSelection);
+    // console.log("human: " + humanScore + "   computer: " + computerScore);
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
 
-console.log("computer: " + computerChoice);
-console.log("you: " + humanChoice);
-playRound(humanSelection, computerSelection);
-console.log("human: " + humanScore + "   computer: " + computerScore);
+playGame();
